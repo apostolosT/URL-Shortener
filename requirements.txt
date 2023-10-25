@@ -1,0 +1,6 @@
+flask
+pytest
+flasgger==0.9.5
+requests
+prospector==1.2.0
+pytest-mock

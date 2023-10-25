@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  shorty-app:
+    build:
+      context: .
+      dockerfile: shorty-app/Dockerfile
+      args:
+        BUILD_DIR: shorty-app
+    network_mode: host
+    environment:
+      LOG_LVL: 'debug'
+    volumes:
+    - ./shorty-app:/usr/src/app

@@ -1,0 +1,42 @@
+summary:  Url shortener
+definitions:
+  Input:
+    type: object
+    properties:
+      url:
+        description: The URL to shorten
+        type: string
+        example: https://example.com
+        required: true
+      provider:
+        description: The provider to use for shortening. If not given defaults to bit.ly
+        type: string
+        example: bitly
+        required: false
+  Output:
+    type: object
+    properties:
+      url:
+        type: string
+        description: The original url
+        example: https://example.com
+        required: true
+      link:
+        type: string
+        description: The shortened link 
+        example: https://bit.ly/8h1bka
+        required: true
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '#/definitions/Input'
+responses:
+  '200':
+    description: The shortened url
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/Output'
+
